@@ -6,15 +6,17 @@ public class LineComparison {
     public static void main(String[] args) {
         System.out.println("Welcome to line length computation");
         System.out.println("Enter coordinate of first line :");
-        double lengthOfLine1 = getLength();
+        LineComparison length = new LineComparison();
+        double lengthOfLine1 = length.getLength();
         System.out.println(lengthOfLine1);
         System.out.println("Enter coordinate of second line");
-        double lengthOfLine2 = getLength();
+        double lengthOfLine2 = length.getLength();
         System.out.println(lengthOfLine2);
-        fullComparison(lengthOfLine1,lengthOfLine2);
+        LineComparison comparison = new LineComparison();
+        comparison.fullComparison(lengthOfLine1,lengthOfLine2);
     }
 
-    static double getLength () {
+    double getLength () {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter x-coordinate : ");
         double x1 = sc.nextDouble();
@@ -28,7 +30,7 @@ public class LineComparison {
         return Line_Length;
     }
 
-    static void fullComparison (double line1,double line2) {
+    void fullComparison (double line1,double line2) {
         if (Objects.equals(line1, line2)) {
             System.out.println("Both lines are equal");
         }
