@@ -11,7 +11,7 @@ public class LineComparison {
         System.out.println("Enter coordinate of second line");
         double lengthOfLine2 = getLength();
         System.out.println(lengthOfLine2);
-        equalOrNot(lengthOfLine1,lengthOfLine2);
+        fullComparison(lengthOfLine1,lengthOfLine2);
     }
 
     static double getLength () {
@@ -28,12 +28,15 @@ public class LineComparison {
         return Line_Length;
     }
 
-    static void equalOrNot (double line1,double line2) {
+    static void fullComparison (double line1,double line2) {
         if (Objects.equals(line1, line2)) {
             System.out.println("Both lines are equal");
         }
+        else if (line1>line2) {
+            System.out.println("Line1 is larger");
+        }
         else {
-            System.out.println("line are not equal");
+            System.out.println("Line2 second is larger");
         }
     }
 }
